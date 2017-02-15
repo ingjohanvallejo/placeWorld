@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mZJ-eI-pfo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Us-->
+        <scene sceneID="dni-C1-s6p">
+            <objects>
+                <tableViewController id="pPC-H7-lwo" customClass="AboutUsTableViewController" customModule="PlacesOfWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D2j-Wz-wM7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigben" id="K1P-54-wrM">
+                            <rect key="frame" x="0.0" y="64" width="375" height="160"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutUsCell" textLabel="i37-Dr-ofV" style="IBUITableViewCellStyleDefault" id="OmC-jg-vxj">
+                                <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OmC-jg-vxj" id="9Qd-LB-Wgz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i37-Dr-ofV">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pPC-H7-lwo" id="cRg-35-yxv"/>
+                            <outlet property="delegate" destination="pPC-H7-lwo" id="EaO-tM-Ypt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About Us" id="zOX-4H-J3m"/>
+                    <connections>
+                        <segue destination="N4U-IG-mdF" kind="show" identifier="ShowWebView" id="6Ip-KQ-0yJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxu-jw-vJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="-576"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="uF3-4f-fHp">
+            <objects>
+                <viewController id="N4U-IG-mdF" customClass="WebViewController" customModule="PlacesOfWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y87-BA-KDY"/>
+                        <viewControllerLayoutGuide type="bottom" id="DQa-hu-Rwj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="58d-5Z-2Gc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-7h-AaD">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DQa-hu-Rwj" firstAttribute="top" secondItem="ZgA-7h-AaD" secondAttribute="bottom" id="9ud-kz-RFr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZgA-7h-AaD" secondAttribute="trailing" id="J6g-B0-4rK"/>
+                            <constraint firstItem="ZgA-7h-AaD" firstAttribute="leading" secondItem="58d-5Z-2Gc" secondAttribute="leadingMargin" id="TIf-dE-dVS"/>
+                            <constraint firstItem="ZgA-7h-AaD" firstAttribute="top" secondItem="y87-BA-KDY" secondAttribute="bottom" id="pVg-ZK-TdR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ZgA-7h-AaD" id="DYM-1i-chl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5b-QI-FSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2631" y="-576"/>
+        </scene>
+        <!--About Us-->
+        <scene sceneID="k8U-30-0Nv">
+            <objects>
+                <navigationController id="mZJ-eI-pfo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About Us" image="about-us" id="cWR-UV-xNb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OIP-1n-M56">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pPC-H7-lwo" kind="relationship" relationship="rootViewController" id="h8i-Va-mr4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aov-8s-Krb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="-576"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="about-us" width="25" height="25"/>
+        <image name="bigben" width="25" height="25"/>
+    </resources>
+</document>
